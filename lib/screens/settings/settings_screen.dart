@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:wemap_store_app/imports.dart';
 import './components/body.dart';
 
 class SettingsScreen extends StatelessWidget {

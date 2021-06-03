@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:wemap_store_app/imports.dart';
 
 class ItemCardContainer extends StatelessWidget {
   final Widget child;

@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../size_config.dart';
+import 'package:wemap_store_app/imports.dart';
 
 class ButtonWithShadow extends StatelessWidget {
   const ButtonWithShadow({

@@ -1,10 +1,10 @@
-import 'package:get/get.dart';
-import 'package:store_app/controller/user_controller.dart';
-import 'package:store_app/models/User.dart';
+import 'package:wemap_store_app/imports.dart';
 
 class SelectLocationController extends GetxController {
   var location = ''.obs;
-  var locationList = List<Location>().obs;
+  var length = 0.obs;
+
+  var locationList = List<Locationn>().obs;
 
   @override
   void onInit() {
@@ -16,7 +16,7 @@ class SelectLocationController extends GetxController {
     locationList.value = Get.find<UserController>().user.value.locations;
   }
 
-  saveLocationList(List<Location> newLocationList) {
+  saveLocationList(List<Locationn> newLocationList) {
     print("save");
     locationList.value = [];
     locationList.value = newLocationList;
@@ -24,6 +24,10 @@ class SelectLocationController extends GetxController {
 
   saveLocation(String newLocation) {
     location.value = newLocation;
+  }
+
+  setLength(int lengthh) {
+    length.value = lengthh;
   }
 
   clear() {

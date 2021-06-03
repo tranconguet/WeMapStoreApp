@@ -1,9 +1,4 @@
-import 'dart:convert';
-
-import 'package:get/get.dart';
-import 'package:store_app/controller/auth_controller.dart';
-import 'package:store_app/models/User.dart';
-import 'package:store_app/services/api_services.dart';
+import 'package:wemap_store_app/imports.dart';
 
 class UserController extends GetxController {
   var user = User().obs;
@@ -36,12 +31,12 @@ class UserController extends GetxController {
     );
   }
 
-  addNewLocation(Location newLocation) async {
+  addNewLocation(Locationn newLocation) async {
     user.value.locations.add(newLocation);
     await updateUserInfo();
   }
 
-  removeLocation(Location location) {
+  removeLocation(Locationn location) {
     user.value.locations.remove(location);
     updateUserInfo();
   }
@@ -79,5 +74,9 @@ class UserController extends GetxController {
       'locations': json.encode(user.value.locations),
     };
     await ApiServices.updateUser(data, user.value.id);
+  }
+
+  clear() {
+    user.value = User();
   }
 }

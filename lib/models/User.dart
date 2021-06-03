@@ -1,66 +1,7 @@
-// To parse this JSON data, do
-//
-//     final user = userFromJson(jsonString);
-
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
+import 'package:wemap_store_app/imports.dart';
 
 List<User> userFromJson(String str) =>
     List<User>.from(json.decode(str).map((x) => User.fromJson(x)));
-
-// // User userFromJson(String str) {
-// //   if (str.isNotEmpty)
-// //     return User.fromJson(json.decode(str));
-// //   else
-// //     return null;
-// // }
-
-// String userToJson(User data) => json.encode(data.toJson());
-
-// class User {
-//   User({
-//     this.id,
-//     this.email,
-//     this.userName,
-//     this.birthday,
-//     this.gender,
-//     this.address,
-//     this.phoneNumber,
-//   });
-
-//   String id;
-//   String email;
-//   String userName;
-//   String birthday;
-//   String gender;
-//   String address;
-//   String phoneNumber;
-
-//   factory User.fromJson(Map<String, dynamic> json) => User(
-//         id: json["_id"],
-//         email: json["email"],
-//         userName: json["userName"],
-//         birthday: json["birthday"],
-//         gender: json["gender"],
-//         address: json["address"],
-//         phoneNumber: json["phoneNumber"],
-//       );
-
-//   Map<String, dynamic> toJson() => {
-//         "_id": id,
-//         "email": email,
-//         "userName": userName,
-//         "birthday": birthday,
-//         "gender": gender,
-//         "address": address,
-//         "phoneNumber": phoneNumber,
-//       };
-// }
-
-// To parse this JSON data, do
-//
-//     final user = userFromJson(jsonString);
 
 String userToJson(User data) => json.encode(data.toJson());
 
@@ -77,14 +18,14 @@ class User {
       this.cart,
       this.locations});
 
-  String id;
-  String email;
-  String address;
-  String gender;
-  String phoneNumber;
-  String birthday;
-  String userName;
-  List<Location> locations;
+  String id = '';
+  String email = '';
+  String address = '';
+  String gender = '';
+  String phoneNumber = '';
+  String birthday = '';
+  String userName = '';
+  List<Locationn> locations;
   List<String> loves;
   List<Cart> cart;
 
@@ -98,8 +39,8 @@ class User {
         userName: json["userName"],
         loves: List<String>.from(json["loves"]),
         cart: List<Cart>.from(json["cart"].map((x) => Cart.fromJson(x))),
-        locations: List<Location>.from(
-            json["locations"].map((x) => Location.fromJson(x))),
+        locations: List<Locationn>.from(
+            json["locations"].map((x) => Locationn.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
@@ -111,7 +52,7 @@ class User {
         "birthday": birthday,
         "userName": userName,
         "loves": loves,
-        "locations": List<Location>.from(locations.map((x) => x.toJson())),
+        "locations": List<Locationn>.from(locations.map((x) => x.toJson())),
         "cart": List<Cart>.from(cart.map((x) => x.toJson())),
       };
 }
@@ -140,8 +81,8 @@ class Cart {
       };
 }
 
-class Location {
-  Location({
+class Locationn {
+  Locationn({
     this.receiverName,
     this.phoneNumber,
     this.address,
@@ -153,7 +94,7 @@ class Location {
   String address;
   int length;
 
-  factory Location.fromJson(Map<String, dynamic> json) => Location(
+  factory Locationn.fromJson(Map<String, dynamic> json) => Locationn(
         receiverName: json["receiverName"],
         phoneNumber: json["phoneNumber"],
         address: json["address"],

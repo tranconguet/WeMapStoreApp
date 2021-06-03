@@ -1,17 +1,9 @@
-import 'package:get/get.dart';
-import 'package:store_app/controller/user_controller.dart';
-import 'package:store_app/helpers.dart';
-import 'package:store_app/models/CartItem.dart';
-import 'package:store_app/models/Discount.dart';
-import 'package:store_app/models/User.dart';
-import 'package:store_app/services/api_services.dart';
-
-import 'cart_controller.dart';
+import 'package:wemap_store_app/imports.dart';
 
 class CheckOutController extends GetxController {
   var discountList = List<Discount>().obs;
   var discountSelected = Discount().obs;
-  var locationSelected = Location().obs;
+  var locationSelected = Locationn().obs;
   var items = List<CartItem>().obs;
   var shippingFee = 0.obs;
   var shippingFeeAfterDiscount = 0.obs;
@@ -84,7 +76,7 @@ class CheckOutController extends GetxController {
     }
   }
 
-  setLocation(Location location) {
+  setLocation(Locationn location) {
     locationSelected.value = location;
     shippingFee.value = distanceToMoney(locationSelected.value.length);
     shippingFeeAfterDiscount.value =

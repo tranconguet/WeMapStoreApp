@@ -1,4 +1,4 @@
-import 'dart:convert';
+import 'package:wemap_store_app/imports.dart';
 
 List<Discount> discountsFromJson(String str) =>
     List<Discount>.from(json.decode(str).map((x) => Discount.fromJson(x)));
